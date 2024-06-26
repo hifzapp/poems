@@ -13,7 +13,7 @@ header {
 }
 
 .header-background {
-    background-image: url('three.jpg');
+    background-image: url('assets/three.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px 10px;
