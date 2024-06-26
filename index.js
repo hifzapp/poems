@@ -45,23 +45,13 @@ function playLine(line, repeat) {
         } else {
             playLine(line + 1, repeat);
         }
-        // if (repeat < repeatCount - 1) {
-        //     playLine(line, repeat + 1);
-        // } else {
-        //     playLine(line + 1, 0);
-        // }
-        // if (repeat < repeatCount - 1) {
-        //     playLine(line, repeat + 1);
-        // } else {
-        //     playLine(line + 1, 0);
-        // }
     };
 }
 
 function highlightLine(line) {
-    const lines = document.querySelectorAll('.line');
+    const lines = document.querySelectorAll('#line');
     lines.forEach(l => l.classList.remove('highlight'));
-    const currentLine = document.querySelector(`.line[data-line="${line}"]`);
+    const currentLine = document.querySelector(`#line[data-line="${line}"]`);
     if (currentLine) {
         currentLine.classList.add('highlight');
     }
