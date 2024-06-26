@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuhfatul Atfaal</title>
+    <script src="poem.js" defer></script>
+    <link rel="stylesheet" href="poems.css">
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <h1>Tuhfatul Atfaal</h1>
+        </div>
+            <nav>
+                <a href="poem.html">Home</a>
+                <a href="poem.html#poems">Poems</a>
+                <a href="poem.html#quotes">Quotes</a>
+                <a href="poem.html#about">About</a>
+            </nav>
+    </header>
+
+    <div class="navi">
+        <label for="start">Start Line:</label>
+        <input type="number" id="start" name="start" min="1" max="61" value="1">
+
+        <label for="Stop">Stop Line:</label>
+        <input type="number" id="Stop" name="Stop" min="1" max="61" value="1">
+        <button onclick="applyPlaybackRange()">Apply</button>
+
+        <label for="Repeat">Repeat Line:</label>
+        <input type="number" id="Repeat" name="Repeat" min="1" max="10" value="1">
+        <button onclick="playAudio()">Play Audio</button>
+    </div>
+
+    <main>
+        <div class="poem-container">
+            <h1>تحفة الاطفال</h1>
+            <p id="poem-text">This is the first line of Poem 1.<br>
+                This is the second line of Poem 1.<br>
+                This is the third line of Poem 1.<br>
+                This is the fourth line of Poem 1.<br>
+                This is the fifth line of Poem 1.</p>
+        </div>
+    </main>
+    <audio id="poem-audio" src="poem1.mp3" preload="auto"></audio>
+</body>
+</html>
