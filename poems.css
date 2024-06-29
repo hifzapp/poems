@@ -40,14 +40,11 @@ nav {
 .navi {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding-bottom: 25px;
-    padding-top: 20px;
+    align-items: center;
     font-size: 18px;
-    margin: 8px;
     gap: 40px;
     background-color: #c1b0b0;
-    border-radius: 10px;
+    border-top: 40px;
 }
 
 .navi input[type="number"] {
@@ -55,6 +52,13 @@ nav {
     width: 80px;
     height: 20px;
     border-radius: 4px;
+}
+
+#fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 
@@ -78,6 +82,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .section {
@@ -86,7 +91,11 @@ main {
 }
 
 .line.highlight {
-    background-color: #ffff99; /* Highlight color */
+    background-color: #f4f430; 
+}
+
+.font-brown {
+    color: rgb(189, 55, 55);
 }
 
 .poem-container {
@@ -111,14 +120,15 @@ button {
     background-color: #5c525c;
     color: white;
     border: none;
-    padding: 10px 20px;
-    padding-bottom: 12px;
+    padding: 8px 16px;
+    padding-bottom: 9px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
     font-family:'Times New Roman', Times, serif ;
 }
+

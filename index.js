@@ -4,7 +4,7 @@ var startLine = 1;
 var stopLine = 1;
 var repeatCount = 1;
 
-var isPLaying = false;
+var isPlaying = false;
 
 const audioFiles = [
     '00.mp3', '01.mp3', '02.mp3', '03.mp3', '04.mp3', '05.mp3', '06.mp3', '07.mp3', 
@@ -28,17 +28,17 @@ function applyPlaybackRange() {
 
 function togglePlay(on) {
     if (on) {
-        isPLaying = true;
-        document.getElementById('play').innerText = "Stop Audio";
+        isPlaying = true;
+        document.getElementById('play').innerText = "STOP AUDIO";
     }
     else {
-        isPLaying = false;
-        document.getElementById('play').innerText = "Play Audio";
+        isPlaying = false;
+        document.getElementById('play').innerText = "PLAY AUDIO";
     }
 }
 
 function playAudio() {
-    if (!isPLaying) {
+    if (!isPlaying) {
         togglePlay(true);
         applyPlaybackRange();
         let currentLine = startLine;
@@ -48,6 +48,7 @@ function playAudio() {
     else {
         togglePlay(false);
     }
+    colorLine();
 }
 
 function playClick(data_line) {
@@ -61,7 +62,7 @@ function playClick(data_line) {
 }
 
 function playLine(line, repeat) {
-    if (!isPLaying || (line + 1 > stopLine && repeat < 1)) {
+    if (!isPlaying || (line + 1 > stopLine && repeat < 1)) {
         togglePlay(false);
         return;
     }
@@ -89,5 +90,37 @@ function highlightLine(line) {
     const currentLine = document.querySelector(`.line[id="${line}"]`);
     if (currentLine) {
         currentLine.classList.add('highlight');
+    }
+}
+
+function startLineChange(line) {
+    document.getElementById('stop').min = line;
+    if (parseInt(document.getElementById('stop').value) < parseInt(line)) {
+        document.getElementById('stop').value = line;
+    }
+    if (!isPlaying) {
+        colorLine();
+    }
+}
+
+function stopLineChange(line) {
+    if (!isPlaying) {
+        colorLine();
+    }
+}
+
+function colorLine(){
+    const start = parseInt(document.getElementById('start').value);
+    const stop = parseInt(document.getElementById('stop').value);
+    
+    const lines = document.querySelectorAll('.line');
+    
+    lines.forEach(l => l.classList.remove('font-brown'));
+    
+    for (let i = start; i <= stop; i++) {
+        const currentLine = document.querySelector(`.line[id="${i}"]`);
+        if (currentLine) {
+            currentLine.classList.add('font-brown');
+        }
     }
 }

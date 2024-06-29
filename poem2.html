@@ -20,19 +20,6 @@
             </nav>
     </header>
 
-    <div class="navi">
-        <label for="start">Start Line:</label>
-        <input type="number" id="start" name="Start" min="1" max="61" value="1">
-
-        <label for="stop">Stop Line:</label>
-        <input type="number" id="stop" name="Stop" min="1" max="61" value="1">
-        <!-- <button onclick="applyPlaybackRange()">Apply</button> -->
-
-        <label for="repeat">Repeat Line:</label>
-        <input type="number" id="repeat" name="Repeat" min="1" max="10" value="1">
-        <button id="play" onclick="playAudio()">Play Audio</button>
-    </div>
-
     <main>
         <div class="poem-container">
             <h1>تحفة الاطفال</h1>
@@ -112,5 +99,18 @@
         </div>
     </main>
     <audio id="poem-audio" src="" preload="auto"></audio>
+
+    <div class="navi" id="fixed">
+        <label for="start">START LINE:</label>
+        <input type="number" id="start" name="Start" min="1" max="61" value="1" onchange="startLineChange(this.value)">
+    
+        <label for="stop">STOP LINE:</label>
+        <input type="number" id="stop" name="Stop" min="1" max="61" value="1" onchange="stopLineChange(this.value)">
+    
+        <label for="repeat">REPEAT LINE:</label>
+        <input type="number" id="repeat" name="Repeat" min="1" max="10" value="1">
+        <button id="play" onclick="playAudio()">PLAY AUDIO</button>
+    </div>
 </body>
+
 </html>
