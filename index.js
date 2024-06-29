@@ -1,8 +1,10 @@
 const poemText = document.getElementById('poem-text');
 const poemAudio = document.getElementById('poem-audio');
-let startLine = 1;
-let stopLine = 1;
-let repeatCount = 1;
+var startLine = 1;
+var stopLine = 1;
+var repeatCount = 1;
+
+var isPLaying = false;
 
 const audioFiles = [
     '00.mp3', '01.mp3', '02.mp3', '03.mp3', '04.mp3', '05.mp3', '06.mp3', '07.mp3', 
@@ -20,19 +22,50 @@ function applyPlaybackRange() {
     startLine = parseInt(document.getElementById('start').value);
     stopLine = parseInt(document.getElementById('stop').value);
     repeatCount = parseInt(document.getElementById('repeat').value);
+    
+    console.log(repeatCount);
+}
+
+function togglePlay(on) {
+    if (on) {
+        isPLaying = true;
+        document.getElementById('play').innerText = "Stop Audio";
+    }
+    else {
+        isPLaying = false;
+        document.getElementById('play').innerText = "Play Audio";
+    }
 }
 
 function playAudio() {
-    let currentLine = startLine;
-    let currentRepeat = repeatCount;
-    playLine(currentLine, currentRepeat);
+    if (!isPLaying) {
+        togglePlay(true);
+        applyPlaybackRange();
+        let currentLine = startLine;
+        let currentRepeat = repeatCount;
+        playLine(currentLine, currentRepeat);
+    }
+    else {
+        togglePlay(false);
+    }
+}
+
+function playClick(data_line) {
+    togglePlay(true);
+    console.log(data_line);
+    let currentLine = parseInt(data_line);
+
+    document.getElementById('start').value = data_line;
+    document.getElementById('stop').value = data_line;
+    playLine(currentLine, repeatCount);
 }
 
 function playLine(line, repeat) {
-    if (line + 1 > stopLine && repeat < 1) {
+    if (!isPLaying || (line + 1 > stopLine && repeat < 1)) {
+        togglePlay(false);
         return;
     }
-    console.log(line, repeat)
+    console.log(line, repeat);
     poemAudio.src = "audio/" + audioFiles[line];
     poemAudio.play();
     highlightLine(line);
@@ -41,6 +74,8 @@ function playLine(line, repeat) {
         if (line + 1 > stopLine) {
             if (repeat > 1) {
                 playLine(startLine, repeat - 1);
+            } else {
+                togglePlay(false);
             }
         } else {
             playLine(line + 1, repeat);
@@ -49,9 +84,9 @@ function playLine(line, repeat) {
 }
 
 function highlightLine(line) {
-    const lines = document.querySelectorAll('#line');
+    const lines = document.querySelectorAll('.line');
     lines.forEach(l => l.classList.remove('highlight'));
-    const currentLine = document.querySelector(`#line[data-line="${line}"]`);
+    const currentLine = document.querySelector(`.line[id="${line}"]`);
     if (currentLine) {
         currentLine.classList.add('highlight');
     }
