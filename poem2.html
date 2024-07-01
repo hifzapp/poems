@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuhfatul Atfaal</title>
+    <link rel="icon" type="image/x-icon" href="assets/p.ico">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="poems.css">
 </head>
@@ -101,16 +102,19 @@
     <audio id="poem-audio" src="" preload="auto"></audio>
 
     <div class="navi" id="fixed">
-        <label for="start">Start Line:</label>
-        <input type="number" id="start" name="Start" min="1" max="61" value="1" onchange="startLineChange(this.value)">
-    
-        <label for="stop">Stop Line:</label>
-        <input type="number" id="stop" name="Stop" min="1" max="61" value="1" onchange="stopLineChange(this.value)">
-    
-        <label for="repeat">Repeat Line:</label>
-        <input type="number" id="repeat" name="Repeat" min="1" max="10" value="1">
+        <button class="dropdown-toggle" onclick="toggleDropdown()">☰ Menu</button>
+        <div class="dropdown-content">
+            <label for="start">Start Line:</label>
+            <input type="number" id="start" name="Start" min="1" max="61" value="1" onchange="startLineChange(this.value)">
         
-        <button id="play" onclick="playAudio()">Play Audio</button>
+            <label for="stop">Stop Line:</label>
+            <input type="number" id="stop" name="Stop" min="1" max="61" value="1" onchange="stopLineChange(this.value)">
+
+            <label for="repeat">Repeat Line:</label>
+            <input type="number" id="repeat" name="repeat" min="1" max="10" value="1">
+            
+            <button id="play" onclick="playAudio()">Play Audio</button>
+        </div>
     </div>
 </body>
 

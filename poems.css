@@ -36,6 +36,8 @@ nav {
     margin: 10px;
     padding-bottom: 25px;
     overflow: hidden;
+    box-sizing: border-box;
+    flex-wrap: wrap; 
 }
 
 .navi {
@@ -50,7 +52,7 @@ nav {
     flex-wrap: wrap; 
 }
 
-.navi input[type="number"] {
+.navi input[type="number"]{
     text-align: center;
     width: 80px;
     height: 20px;
@@ -73,11 +75,13 @@ nav a {
     transition: background-color 0.3s, color 0.3s;
     font-size: 20px;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 nav a:hover {
     background-color: #c2c2c2;
     color: #333;
+    box-sizing: border-box;
 }
 
 main {
@@ -115,8 +119,10 @@ main {
 }
 
 #repeat {
-    margin-left: 10px;
-    width: 50px;
+    text-align: center;
+    width: 80px;
+    height: 20px;
+    border-radius: 4px;
 }
 
 button {
@@ -135,39 +141,103 @@ button {
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
-@media (max-width: 1024px) {
+.dropdown-toggle {
+    display: none;
+}
+
+.dropdown-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 40px;
+    background-color: #c1b0b0;
+    border-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-wrap: wrap; 
+}
+
+/* Adjust for tablets */
+@media (max-width: 912px) {
     .navi {
-        font-size: 16px;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
 
+    .dropdown-toggle {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        width: 100%;
+    }
+
+    .navi.active .dropdown-content {
+        display: flex;
+    }
+
     .navi input[type="number"] {
-        width: 60px;
+        width: 90px;
+        height: 20px;
+    }
+
+    #repeat {
+        width: 90px;
         height: 20px;
     }
 
     button {
-        padding: 6px 12px;
+        padding: 8px 18px 10px;
         font-size: 12px;
     }
 }
 
 /* Adjust for phones */
+
 @media (max-width: 768px) {
     .navi {
-        flex-direction: column; /* Stack items vertically */
-        font-size: 16px;
+        flex-direction: column;
+        align-items: center;
         gap: 10px;
+    }
+
+    .dropdown-toggle {
+        display: block; /* Visible on phones */
+    }
+
+    .dropdown-content {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navi.active .dropdown-content {
+        display: flex;
     }
 
     .navi label,
     .navi input[type="number"],
-    button {
-        width: 100%; /* Make items full width */
+    .navi button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navi input[type="number"] {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #repeat {
+        width: 100%;
         text-align: center;
     }
 
     button {
+        width: 100%;
         padding: 10px;
         font-size: 16px;
     }
@@ -177,11 +247,18 @@ button {
     nav a {
         float: none;
         display: inline;
+        text-align: center;
+    }
+
+    nav a:hover {
+        background-color: #c2c2c2;
+        color: #333;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 669px) {
     nav {
+        display: inline;
         text-align: center;
     }
 
@@ -189,5 +266,11 @@ button {
         float: none;
         display: block;
         width: 100%;
+        text-align: center;
+    }
+
+    nav a:hover {
+        background-color: #c2c2c2;
+        color: #333;
     }
 }

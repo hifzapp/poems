@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 
 header {
@@ -35,6 +36,9 @@ nav {
     margin: 10px;
     padding-bottom: 25px;
     overflow: hidden;
+    box-sizing: border-box;
+    flex-wrap: wrap; 
+    width: 100%; 
 }
 
 nav a {
@@ -45,6 +49,7 @@ nav a {
     transition: background-color 0.3s, color 0.3s;
     font-size: 20px;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 nav a:hover {
@@ -123,4 +128,17 @@ footer {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+}
+
+@media (max-width: 669px) {
+    nav {
+        display: inline;
+        text-align: center;
+    }
+
+    nav a {
+        float: none;
+        display: block;
+        width: 100%;
+    }
 }

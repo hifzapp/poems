@@ -124,3 +124,8 @@ function colorLine(){
         }
     }
 }
+
+function toggleDropdown() {
+    const navi = document.querySelector('.navi');
+    navi.classList.toggle('active');
+}
