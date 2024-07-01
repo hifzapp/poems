@@ -35,6 +35,7 @@ nav {
     padding: 10px 10px;
     margin: 10px;
     padding-bottom: 25px;
+    overflow: hidden;
 }
 
 .navi {
@@ -46,6 +47,7 @@ nav {
     background-color: #c1b0b0;
     border-top: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-wrap: wrap; 
 }
 
 .navi input[type="number"] {
@@ -133,3 +135,59 @@ button {
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
+@media (max-width: 1024px) {
+    .navi {
+        font-size: 16px;
+        gap: 20px;
+    }
+
+    .navi input[type="number"] {
+        width: 60px;
+        height: 20px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Adjust for phones */
+@media (max-width: 768px) {
+    .navi {
+        flex-direction: column; /* Stack items vertically */
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .navi label,
+    .navi input[type="number"],
+    button {
+        width: 100%; /* Make items full width */
+        text-align: center;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    nav a {
+        float: none;
+        display: inline;
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+}

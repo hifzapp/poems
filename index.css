@@ -34,6 +34,7 @@ nav {
     padding: 10px 10px;
     margin: 10px;
     padding-bottom: 25px;
+    overflow: hidden;
 }
 
 nav a {
