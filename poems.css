@@ -45,6 +45,7 @@ nav {
     gap: 40px;
     background-color: #c1b0b0;
     border-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .navi input[type="number"] {
@@ -129,6 +130,6 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
-    font-family:'Times New Roman', Times, serif ;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 

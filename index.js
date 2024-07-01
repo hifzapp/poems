@@ -29,11 +29,11 @@ function applyPlaybackRange() {
 function togglePlay(on) {
     if (on) {
         isPlaying = true;
-        document.getElementById('play').innerText = "STOP AUDIO";
+        document.getElementById('play').innerText = "Stop Audio";
     }
     else {
         isPlaying = false;
-        document.getElementById('play').innerText = "PLAY AUDIO";
+        document.getElementById('play').innerText = "Play Audio";
     }
 }
 
