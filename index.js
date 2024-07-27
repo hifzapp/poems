@@ -6,16 +6,7 @@ var repeatCount = 1;
 
 var isPlaying = false;
 
-const audioFiles = [
-    '00.mp3', '01.mp3', '02.mp3', '03.mp3', '04.mp3', '05.mp3', '06.mp3', '07.mp3', 
-    '08.mp3', '09.mp3', '10.mp3', '11.mp3', '12.mp3', '13.mp3', '14.mp3', '15.mp3', 
-    '16.mp3', '17.mp3', '18.mp3', '19.mp3', '20.mp3', '21.mp3', '22.mp3', '23.mp3', 
-    '24.mp3', '25.mp3', '26.mp3', '27.mp3', '28.mp3', '29.mp3', '30.mp3', '31.mp3', 
-    '32.mp3', '33.mp3', '34.mp3', '35.mp3', '36.mp3', '37.mp3', '38.mp3', '39.mp3', 
-    '40.mp3', '41.mp3', '42.mp3', '43.mp3', '44.mp3', '45.mp3', '46.mp3', '47.mp3', 
-    '48.mp3', '49.mp3', '50.mp3', '51.mp3', '52.mp3', '53.mp3', '54.mp3', '55.mp3', 
-    '56.mp3', '57.mp3', '58.mp3', '59.mp3', '60.mp3', '61.mp3'
-];
+const audioFiles = ['T0101.mp3', 'T0102.mp3', 'T0103.mp3', 'T0104.mp3', 'T0105.mp3', 'T0201.mp3', 'T0202.mp3', 'T0203.mp3', 'T0204.mp3', 'T0205.mp3', 'T0206.mp3', 'T0207.mp3', 'T0208.mp3', 'T0209.mp3', 'T0210.mp3', 'T0211.mp3', 'T0301.mp3', 'T0401.mp3', 'T0402.mp3', 'T0403.mp3', 'T0404.mp3', 'T0405.mp3', 'T0406.mp3', 'T0501.mp3', 'T0502.mp3', 'T0503.mp3', 'T0504.mp3', 'T0505.mp3', 'T0506.mp3', 'T0601.mp3', 'T0602.mp3', 'T0603.mp3', 'T0604.mp3', 'T0605.mp3', 'T0701.mp3', 'T0702.mp3', 'T0703.mp3', 'T0704.mp3', 'T0705.mp3', 'T0706.mp3', 'T0707.mp3', 'T0801.mp3', 'T0802.mp3', 'T0803.mp3', 'T0804.mp3', 'T0805.mp3', 'T0806.mp3', 'T0901.mp3', 'T0902.mp3', 'T0903.mp3', 'T0904.mp3', 'T0905.mp3', 'T0906.mp3', 'T0907.mp3', 'T0908.mp3', 'T0909.mp3', 'T0910.mp3', 'T1001.mp3', 'T1002.mp3', 'T1003.mp3', 'T1004.mp3']
 
 
 function applyPlaybackRange() {
@@ -67,7 +58,7 @@ function playLine(line, repeat) {
         return;
     }
     console.log(line, repeat);
-    poemAudio.src = "audio/" + audioFiles[line];
+    poemAudio.src = "audio/1/" + audioFiles[line];
     poemAudio.play();
     highlightLine(line);
 
